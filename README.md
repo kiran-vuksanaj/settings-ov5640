@@ -17,7 +17,7 @@ The files are formatted such that the first 16 bits (4 hex digits) of each line 
 
 ### What's going on here?
 
-At startup, the OV5640 needs a sequence of registers to be set over its I2C (SCCB, technically--see datasheet) bus; the drivers implemented in various microcontroller systems specify a sequence that works to get the camera running. This repo has a modified version of a few different drivers mushed together that seems to give good results for getting the camera running nicely in the architecture we've been using in 6.205. Instead of actually configuring the camera, it just prints out each command it would have sent in a good format to stick into a BRAM initialization file (see above for format) so we can go use
+At startup, the OV5640 needs a sequence of registers to be set over its I2C (SCCB, technically--see datasheet) bus; the drivers implemented in various microcontroller systems specify a sequence that works to get the camera running. This repo has a modified version of a few different drivers mushed together that seems to give good results for getting the camera running nicely in the architecture we've been using in 6.205. Instead of actually configuring the camera, it just prints out each command it would have sent in a good format to stick into a BRAM initialization file (see above for format) so we can go use it when we press our button to configure the camera!
 
 The base code provided for lab in weeks 05-07 expect a `rom.mem` formatted the way that this script produces them. You can also use the data from these files to set up alternate ways of configuring the camera, if you happen to need to dynamically reconfigure the camera or anything like that.
 
